@@ -1,4 +1,9 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Angular Reactive Form Example</h1>
+<form  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+<input type="text" placeholder="enter name" name="user" formControlName="user">
+<br/><br/>
+<input type="password" placeholder="enter password" name="password" formControlName="password">
+<br/><br/>
+<button>Login Form</button>
+
+</form>
