@@ -1,9 +1,22 @@
 <h1>Angular Reactive Form Example</h1>
 <form  [formGroup]="loginForm" (ngSubmit)="loginUser()">
-<input type="text" placeholder="enter name" name="user" formControlName="user">
+<input
+   type="text"
+   placeholder="enter name"
+  name="user"
+  formControlName="user">
+<br />
+<span style="color : red;" *ngIf="user && user.invalid && user.touched">This field is required</span>
+      <br/><br/>
+
+<input
+  type="password"
+  placeholder="enter password"
+  name="password"
+  formControlName="password">
+  <br/>
+  <span style="color : red;" *ngIf="password && password.invalid && password.touched">This field is required</span>
 <br/><br/>
-<input type="password" placeholder="enter password" name="password" formControlName="password">
-<br/><br/>
-<button>Login Form</button>
+<button [disabled]="loginForm.invalid">Login Form</button>
 
 </form>
